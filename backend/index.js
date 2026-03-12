@@ -17,6 +17,9 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.log('MongoDB Connection Error: ', err.message));
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('Welcome to the Library Management System API! Visit /books to view all books.');
+});
 app.use('/books', bookRoutes);
 
 // Error Handler
